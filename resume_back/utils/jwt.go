@@ -13,7 +13,7 @@ type Claims struct {
 	jwt.RegisteredClaims
 }
 
-var jwtSecret = []byte("your-secret-key") // 在实际项目中应该从配置中读取
+var jwtSecret = []byte("Ai_Resume_Project") // 在实际项目中应该从配置中读取
 
 // GenerateToken 生成JWT令牌
 func GenerateToken(userID uint, username string) (string, error) {

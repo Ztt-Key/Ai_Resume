@@ -33,13 +33,12 @@ func setupUserRoutes(v1 *gin.RouterGroup) {
 	// 公开路由（不需要认证）
 	public := v1.Group("/auth")
 	{
-		public.GET("/test", userController.Test)
 		public.POST("/register", userController.Register)
 		public.POST("/login", userController.Login)
 	}
 
 	// 需要认证的路由
-	protected := v1.Group("/user")
+	protected := v1.Group("/users")
 	protected.Use(middleware.JWTAuth())
 	{
 		protected.GET("/profile", userController.GetProfile)

@@ -1,0 +1,190 @@
+.home-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f7fa;
+  
+  text {
+    font-size: 32rpx;
+    color: #666;
+  }
+}
+
+.home-header {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  
+  .welcome-text {
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30rpx;
+    display: block;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20rpx;
+    
+    .user-avatar {
+      width: 80rpx;
+      height: 80rpx;
+      border-radius: 50%;
+      border: 3rpx solid #fff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .user-name {
+      font-size: 28rpx;
+      color: #555;
+      font-weight: 500;
+    }
+  }
+}
+
+.feature-section {
+  .section-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 30rpx;
+    display: block;
+    text-align: center;
+  }
+  
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20rpx;
+    margin-bottom: 40rpx;
+  }
+  
+  .feature-item {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20rpx;
+    padding: 30rpx 20rpx;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    
+    &:active {
+      transform: translateY(2rpx);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .feature-icon {
+      font-size: 48rpx;
+      margin-bottom: 15rpx;
+      display: block;
+    }
+    
+    .feature-title {
+      font-size: 28rpx;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 10rpx;
+      display: block;
+    }
+    
+    .feature-desc {
+      font-size: 24rpx;
+      color: #666;
+      line-height: 1.4;
+      display: block;
+    }
+  }
+}
+
+.home-footer {
+  margin-top: 60rpx;
+  
+  .logout-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 25rpx;
+    padding: 28rpx 0;
+    font-size: 30rpx;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    
+    &:active {
+      transform: translateY(2rpx);
+      box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    }
+  }
+}
+
+// 响应式适配
+@media (max-width: 750rpx) {
+  .home-container {
+    padding: 30rpx 20rpx;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 15rpx;
+  }
+  
+  .feature-item {
+    padding: 25rpx 20rpx;
+    
+    .feature-icon {
+      font-size: 40rpx;
+    }
+    
+    .feature-title {
+      font-size: 26rpx;
+    }
+    
+    .feature-desc {
+      font-size: 22rpx;
+    }
+  }
+}
+
+// 添加动画效果
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-header,
+.feature-section,
+.home-footer {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.feature-item {
+  animation: fadeIn 0.6s ease-out;
+  
+  &:nth-child(1) { animation-delay: 0.1s; }
+  &:nth-child(2) { animation-delay: 0.2s; }
+  &:nth-child(3) { animation-delay: 0.3s; }
+  &:nth-child(4) { animation-delay: 0.4s; }
+} 
