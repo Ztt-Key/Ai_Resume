@@ -11,14 +11,9 @@ export const ROUTES = {
   LOGIN: '/pages/index/index',
   // 主页
   HOME: '/pages/home/index',
-  // 简历相关页面（预留）
-  RESUME_LIST: '/pages/resume/list',
-  RESUME_CREATE: '/pages/resume/create',
-  RESUME_EDIT: '/pages/resume/edit',
-  RESUME_PREVIEW: '/pages/resume/preview',
-  // 用户相关页面（预留）
-  USER_PROFILE: '/pages/user/profile',
-  USER_SETTING: '/pages/user/setting'
+  // 创建简历
+  CREATE_RESUME: '/pages/createresume/index',
+
 }
 
 /**

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { userAPI } from '../../api/user'
 import { validateUtils, authUtils } from '../../utils'
 import './index.scss'
-
+import Taro from '@tarojs/taro'
 export default function Index() {
   const [loginType, setLoginType] = useState('phone') // 'phone' | 'wechat'
   const [phoneNumber, setPhoneNumber] = useState('')
@@ -90,7 +90,10 @@ export default function Index() {
       })
       return
     }
-
+    Taro.navigateTo({
+  url: '/pages/home/index'
+})
+   //  最后在实现短信登录
     try {
       setIsLoading(true)
       const result = await userAPI.loginWithPhone(phoneNumber, verifyCode)
@@ -206,12 +209,14 @@ export default function Index() {
             <View className='phone-login'>
               <View className='input-group'>
                 <Input
-                  className='input-field'
+                  className='input-field phone-input'
                   type='number'
                   placeholder='请输入手机号'
                   value={phoneNumber}
                   onInput={(e) => setPhoneNumber(e.detail.value)}
                   maxlength={11}
+                  adjustPosition
+                  placeholderClass='input-placeholder'
                 />
               </View>
               
@@ -223,15 +228,11 @@ export default function Index() {
                   value={verifyCode}
                   onInput={(e) => setVerifyCode(e.detail.value)}
                   maxlength={6}
-                />
-                <Button 
-                  className={`verify-btn ${countdown > 0 ? 'disabled' : ''}`}
-                  onClick={sendVerifyCode}
-                  disabled={countdown > 0 || isLoading}
-                  loading={isLoading}
+                  adjustPosition
+                  placeholderClass='input-placeholder'
                 >
-                  {countdown > 0 ? `${countdown}s` : '获取验证码'}
-                </Button>
+                </Input>
+         
               </View>
 
               <Button 

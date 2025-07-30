@@ -1,0 +1,138 @@
+.create-resume-container {
+  padding: 24px;
+  min-height: 100vh;
+  background: #f5f7fa;
+
+  .resume-header {
+    margin-bottom: 32px;
+    text-align: center;
+
+    .page-title {
+      display: block;
+      font-size: 24px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #666;
+    }
+  }
+
+  .resume-form {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+
+    .form-section {
+      margin-bottom: 24px;
+
+      .section-title {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 16px;
+        position: relative;
+        padding-left: 12px;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 4px;
+          height: 16px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          border-radius: 2px;
+        }
+      }
+
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+
+    .input-field {
+      height: 44px;
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 0 16px;
+      font-size: 14px;
+      color: #333;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: #667eea;
+        background: #ffffff;
+        box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+      }
+
+      &::placeholder {
+        color: #adb5bd;
+      }
+    }
+
+    .textarea-field {
+      width: 100%;
+      min-height: 120px;
+      background: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #333;
+      line-height: 1.6;
+      transition: all 0.3s ease;
+
+      &:focus {
+        border-color: #667eea;
+        background: #ffffff;
+        box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+      }
+
+      &::placeholder {
+        color: #adb5bd;
+      }
+    }
+
+    .submit-btn {
+      width: 100%;
+      height: 44px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+      margin-top: 32px;
+      transition: opacity 0.3s ease;
+
+      &:active {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+// 响应式适配
+@media screen and (max-width: 768px) {
+  .create-resume-container {
+    padding: 16px;
+
+    .resume-form {
+      padding: 16px;
+
+      .form-section {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
